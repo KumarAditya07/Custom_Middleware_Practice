@@ -9,11 +9,10 @@ namespace Custom_Middleware_Practice.Controllers
         [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
-            var product = Guid.NewGuid().ToString();
-            if (product != null)
-                return NotFound("Product not found");
+            // Force an exception (Divide by Zero)
+            int result = 10 / id; // If id = 0, this will throw an exception
 
-           return Ok("Hellow Wold");
+            return Ok($"Product ID: {id}, Result: {result}");
         }
 
     }
