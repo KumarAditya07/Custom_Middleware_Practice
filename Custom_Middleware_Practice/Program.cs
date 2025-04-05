@@ -1,3 +1,4 @@
+using Custom_Middleware_Practice.Filters;
 using Custom_Middleware_Practice.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,12 @@ builder.Services.AddHttpClient("ProductClient", client =>
     client.DefaultRequestHeaders.Accept.Clear();
     client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 });
+
+
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<MemoryCacheFilter>();
+
+
 
 var app = builder.Build();
 

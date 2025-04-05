@@ -1,6 +1,6 @@
 ﻿namespace Custom_Middleware_Practice.Response
 {
-    public class JsonResponse
+    public class Product_JsonResponse
     {
         public int id { get; set; }
         public string title { get; set; }
